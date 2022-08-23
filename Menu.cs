@@ -77,6 +77,9 @@ namespace EditorHtml
                 case 0:
                     Environment.Exit(0);
                     break;
+                default:
+                    Menu.Show();
+                    break;
             }
 
         }
