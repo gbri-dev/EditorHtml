@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Text.RegularExpressions;
 
 namespace EditorHtml
@@ -46,6 +47,22 @@ namespace EditorHtml
                     Console.Write(" ");
                 }
             }
+        }
+
+        public static void Salvar(string text)
+        {
+            Console.Clear();
+            Console.WriteLine("Qual o caminho que deseja salvar? ");
+            var path = Console.ReadLine();
+
+            using (var file = new StreamWriter(path))
+            {
+                file.Write(text);
+            }
+
+            Console.WriteLine($"Arquivo {path} salvo com sucesso.");
+            Console.ReadKey();
+            Menu.Show();
         }
     }
 }
